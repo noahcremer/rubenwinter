@@ -1,0 +1,207 @@
+@font-face {
+	font-family: 'Arial';
+	src: url(../f/arial-webfont.woff);
+}
+@font-face {
+	font-family: 'Times';
+	src: url(../f/times_new_roman-webfont.woff);
+}
+@font-face {
+	font-family: 'Times Italic';
+	src: url(../f/times_new_roman_italic-webfont.woff);
+}
+* {
+    margin: 0;
+}
+body {
+
+}
+p {
+    font-family: "Arial";
+}
+a {
+    font-size: 12pt;
+    font-family: "Arial";
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    font-family: "Times Italic";
+    font-size: 13pt;
+}
+a:hover::before {
+    content: "🔗 ";
+}
+.left-logo {
+    height: 25pt;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+.right-logo {
+    height: 25pt;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.foldout-btn {
+    height: 20pt;
+    transition: 300ms ease-in-out;
+}
+.foldout-btn:hover {
+    transition: 300ms ease-in-out;
+}
+.foldout-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    translate: -50%;
+    width: 600px;
+    height: 25pt;
+    text-align: center;
+    align-items: center;
+    transition: 250ms ease-in-out;
+}
+.foldout-container:hover {
+    transition: 250ms ease-in-out;
+}
+.navigation {
+    height: 100%;
+    width: 100%;
+}
+.navbar {
+    opacity: 0;
+    transition: 200ms ease-in-out;
+
+    width: 100vw;
+    height: 30pt;
+    text-align: center;
+    vertical-align: middle;
+    align-content: center;
+    bottom: 20px;
+}
+.navbar:hover {
+    opacity: 1;
+    transition: 200ms ease-in-out;
+}
+nav {
+    position: fixed;
+    bottom: 27px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    vertical-align: middle;
+}
+li {
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 200ms ease-in-out;
+}
+li:hover {
+    margin-bottom: 10px;
+    transition: 200ms ease-in-out;
+}
+.gallery-container {
+    /*display: grid;
+    grid-auto-columns: min-content;
+    gap: 0;*/
+    /*display: inline-flex;*/
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    /*height: 90vh;
+    scrollbar-width: none;*/
+    position: relative;
+}
+.scroll-content {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* For Firefox */
+    width: 100vw; /* or the width of your container */
+    height: 90vh;
+}
+.scroll-content::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+.project-thumbnail {
+    /*grid-column: auto;
+    grid-row: 1;*/
+    position: relative;
+    width: 300px;
+    /*flex-shrink: 0;*/
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: 1.5s ease-in-out; /* Add transition effect */
+}
+.project-info-container {
+    /*width: 300px;
+    height: auto;
+    box-sizing: border-box;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 1);
+    opacity: 0;
+    transition: opacity 250ms ease;
+}
+.project-info-container p {
+    margin: 10px;
+}
+.project-thumbnail:hover .project-info-container {
+    opacity: 1;
+}
+.project-thumbnail:hover .thumbnail-img {
+    opacity: 0;
+}
+.project-title, .project-year, .project-description {
+    position: absolute;
+    font-family: "Times";
+}
+.project-title {
+    font-family: "Times Italic";
+    display: inline-block;
+}
+.project-year {
+    display: inline-block;
+    right: 0;
+}
+.project-description {
+    bottom: -5px;
+}
+.thumbnail-img {
+    width: 100%;
+    transition: opacity 250ms ease;
+    /*translate: 0% -100%;*/
+}
+.thumbnail-img:hover {
+    opacity: 0;
+}
+/* Control flex-shrink property */
+.no-shrink {
+    flex-shrink: 1;
+}
+button {
+    background-color: white;
+    border: none;
+    color: black;
+    font-family: "Arial";
+    font-size: 12pt;
+}
+button:hover {
+    font-family: "Times Italic";
+    font-size: 13pt;
+    cursor: pointer;
+}
+button:hover::before {
+    content: "🔎 ";
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="c/style.css">
+</head>
+<body>
+    <main>
+        <section class="menu">
+
+            <div class="logo">
+                <img class="right-logo" src="p/W.svg">
+                <img class="left-logo" src="p/R.svg">
+            </div>
+
+            <div class="navigation">
+                
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">About</a></li>
+                        <li><button id="toggleFlexShrink">Shrink</button></li>
+                        <li><a href="">Imprint</a></li>
+                    </ul>
+                </nav>
+
+                <!-- <div class="foldout-container">
+                    <img class="foldout-btn" src="p/plus.svg">
+                </div> -->
+
+                
+            </div>
+            
+        </section>
+
+        <section class="projektgallerie">
+            <div class="gallery-container">
+                <div class="scroll-content" id="scroll-content">
+
+                    <div class="project-thumbnail">
+                        <img class="thumbnail-img" src="p/Blick Turm 2.png">
+                        <div class="project-info-container">
+                            <p class="project-title">Project Title</p>
+                            <p class="project-year">2023</p>
+                            <p class="project-description">Lorem Ipsum dolor sit amet.</p>
+                        </div> 
+                    </div>
+                    
+                    <div class="project-thumbnail">
+                        <img class="thumbnail-img" src="p/InnenraumAchse.png" alt="Project Thumbnail">
+                        <div class="project-info-container">
+                            <p class="project-title">Project Title</p>
+                            <p class="project-year">2023</p>
+                            <p class="project-description">Lorem Ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+    
+                    <div class="project-thumbnail">
+                        <img class="thumbnail-img" src="p/Spiegelung.png" alt="Project Thumbnail">
+                        <div class="project-info-container">
+                            <p class="project-title">Project Title</p>
+                            <p class="project-year">2023</p>
+                            <p class="project-description">Lorem Ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+    
+                    <div class="project-thumbnail">
+                        <img class="thumbnail-img" src="p/Blick innen 3.png" alt="Project Thumbnail">
+                        <div class="project-info-container">
+                            <p class="project-title">Project Title</p>
+                            <p class="project-year">2023</p>
+                            <p class="project-description">Lorem Ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-thumbnail">
+                        <img class="thumbnail-img" src="p/Blick Turm 2.png">
+                        <div class="project-info-container">
+                            <p class="project-title">Project Title</p>
+                            <p class="project-year">2023</p>
+                            <p class="project-description">Lorem Ipsum dolor sit amet.</p>
+                        </div> 
+                    </div>
+                    
+                    <div class="project-thumbnail">
+                        <img class="thumbnail-img" src="p/InnenraumAchse.png" alt="Project Thumbnail">
+                        <div class="project-info-container">
+                            <p class="project-title">Project Title</p>
+                            <p class="project-year">2023</p>
+                            <p class="project-description">Lorem Ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+    
+                    <div class="project-thumbnail">
+                        <img class="thumbnail-img" src="p/Spiegelung.png" alt="Project Thumbnail">
+                        <div class="project-info-container">
+                            <p class="project-title">Project Title</p>
+                            <p class="project-year">2023</p>
+                            <p class="project-description">Lorem Ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+    
+                    <div class="project-thumbnail">
+                        <img class="thumbnail-img" src="p/Blick innen 3.png" alt="Project Thumbnail">
+                        <div class="project-info-container">
+                            <p class="project-title">Project Title</p>
+                            <p class="project-year">2023</p>
+                            <p class="project-description">Lorem Ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                
+
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const thumbnails = document.querySelectorAll('.project-thumbnail');
+            thumbnails.forEach(thumbnail => {
+                const img = thumbnail.querySelector('.thumbnail-img');
+                const infoContainer = thumbnail.querySelector('.project-info-container');
+                img.onload = () => {
+                    infoContainer.style.height = `${img.offsetHeight}px`;
+                };
+                if (img.complete) {
+                    infoContainer.style.height = `${img.offsetHeight}px`;
+                }
+            });
+
+            // Horizontal scrolling with mouse wheel
+            const galleryContainer = document.getElementById('scroll-content');
+            galleryContainer.addEventListener('wheel', function(event) {
+                event.preventDefault();
+                galleryContainer.scrollLeft += event.deltaY;
+            });
+
+            const toggleButton = document.getElementById('toggleFlexShrink');
+
+            // Set flex-shrink to 0 by default
+            // thumbnails.forEach(thumbnail => {
+            //     thumbnail.classList.add('no-shrink');
+            // });
+
+            toggleButton.addEventListener('click', function () {
+                thumbnails.forEach(thumbnail => {
+                    thumbnail.classList.toggle('no-shrink');
+                });
+
+                // Add a small delay for smooth animation when toggling flex shrink
+                // setTimeout(() => {
+                //     thumbnails.forEach(thumbnail => {
+                //         thumbnail.style.transition = 'flex-shrink 2s ease';
+                //     });
+                // }, 100);
+            });
+
+            
+        });
+    </script>
+
+</body>
+</html>
