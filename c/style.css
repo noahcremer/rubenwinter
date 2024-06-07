@@ -23,8 +23,11 @@ a {
     color: black;
 }
 a:hover {
-    font-family: "Times Italic";
+    
     font-size: 13pt;
+    font-family: "Times Italic";
+    transition: ease-in-out 200ms;
+    transition-delay: 50ms;
 }
 a:hover::before {
     content: "🔗 ";
@@ -131,9 +134,10 @@ li:hover {
     grid-row: 1;*/
     position: relative;
     width: 300px;
+    height: fit-content;
     /*flex-shrink: 0;*/
     flex-shrink: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
     transition: 1.5s ease-in-out; /* Add transition effect */
 }
 .project-info-container {
@@ -144,12 +148,20 @@ li:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100%);
     display: flex;
     flex-direction: column;
     background: rgba(255, 255, 255, 1);
     opacity: 0;
-    transition: opacity 250ms ease;
+
+    transition: ease-in-out 350ms;
+    transition-delay: 150ms;
+}
+.project-info-container-shrink {
+    background: rgba(255, 255, 255, 0);
+    opacity: 1;
+    transition: ease-in-out 350ms;
+    transition-delay: 150ms;
 }
 .project-info-container p {
     margin: 10px;
@@ -167,14 +179,69 @@ li:hover {
 .project-title {
     font-family: "Times Italic";
     display: inline-block;
+    transition: ease-in-out 350ms;
+    transition-delay: 300ms;
 }
+.project-title-shrink {
+    opacity: 0;
+    transition: ease-in-out 350ms;
+}
+/*.project-title-shrink {
+    position: absolute;
+    font-family: "Times Italic";
+    flex-wrap: wrap;
+    width: 300px;
+    left: 10px;
+    bottom: calc(-200%);
+}*/
+
 .project-year {
     display: inline-block;
     right: 0;
+    transition: ease-in-out 300ms;
+    transition-delay: 300ms;
+}
+.project-year-shrink {
+    opacity: 0;
+    transition: ease-in-out 300ms;
 }
 .project-description {
     bottom: -5px;
+
+    text-wrap: wrap;
+    transition: ease-in-out 300ms;
+    transition-delay: 150ms;
 }
+.project-description-shrink {
+    bottom: calc(-100% - 0.8rem);
+    transition: ease-in-out 300ms;
+    transition-delay: 300ms;
+}
+
+.project-number {
+    position: absolute;
+    font-family: "Times";
+    bottom: calc(0% - 1rem - 8px);
+
+    left: 10px;
+    transition: ease-in-out 550ms;
+
+    transition-delay: 150ms;
+
+}
+.project-number-shrink {
+    bottom: calc(-100% - 2rem);
+    transition: ease-in-out 450ms;
+    transition-delay: 150ms;
+}
+.project-number::before {
+    content: "(";
+}
+.project-number::after {
+    content: ")";
+}
+
+
 .thumbnail-img {
     width: 100%;
     transition: opacity 250ms ease;
@@ -187,6 +254,7 @@ li:hover {
 .no-shrink {
     flex-shrink: 1;
 }
+
 button {
     background-color: white;
     border: none;
@@ -198,6 +266,8 @@ button:hover {
     font-family: "Times Italic";
     font-size: 13pt;
     cursor: pointer;
+    transition: ease-in-out 200ms;
+    transition-delay: 50ms;
 }
 button:hover::before {
     content: "🔎 ";

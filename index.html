@@ -41,15 +41,21 @@
                 <div class="scroll-content" id="scroll-content">
 
                     <div class="project-thumbnail">
+                        <p class="project-number">01</p>
+                        <!--<p class="project-title-shrink">Project Title</p>
+                        <p class="project-number-shrink">01</p>-->
                         <img class="thumbnail-img" src="p/Blick Turm 2.png">
                         <div class="project-info-container">
                             <p class="project-title">Project Title</p>
                             <p class="project-year">2023</p>
                             <p class="project-description">Lorem Ipsum dolor sit amet.</p>
-                        </div> 
+                            
+                        </div>
+                         
                     </div>
                     
                     <div class="project-thumbnail">
+                        <p class="project-number">02</p>
                         <img class="thumbnail-img" src="p/InnenraumAchse.png" alt="Project Thumbnail">
                         <div class="project-info-container">
                             <p class="project-title">Project Title</p>
@@ -59,6 +65,7 @@
                     </div>
     
                     <div class="project-thumbnail">
+                        <p class="project-number">03</p>
                         <img class="thumbnail-img" src="p/Spiegelung.png" alt="Project Thumbnail">
                         <div class="project-info-container">
                             <p class="project-title">Project Title</p>
@@ -68,6 +75,7 @@
                     </div>
     
                     <div class="project-thumbnail">
+                        <p class="project-number">04</p>
                         <img class="thumbnail-img" src="p/Blick innen 3.png" alt="Project Thumbnail">
                         <div class="project-info-container">
                             <p class="project-title">Project Title</p>
@@ -77,6 +85,7 @@
                     </div>
                     
                     <div class="project-thumbnail">
+                        <p class="project-number">05</p>
                         <img class="thumbnail-img" src="p/Blick Turm 2.png">
                         <div class="project-info-container">
                             <p class="project-title">Project Title</p>
@@ -86,6 +95,7 @@
                     </div>
                     
                     <div class="project-thumbnail">
+                        <p class="project-number">06</p>
                         <img class="thumbnail-img" src="p/InnenraumAchse.png" alt="Project Thumbnail">
                         <div class="project-info-container">
                             <p class="project-title">Project Title</p>
@@ -95,6 +105,7 @@
                     </div>
     
                     <div class="project-thumbnail">
+                        <p class="project-number">07</p>
                         <img class="thumbnail-img" src="p/Spiegelung.png" alt="Project Thumbnail">
                         <div class="project-info-container">
                             <p class="project-title">Project Title</p>
@@ -104,6 +115,7 @@
                     </div>
     
                     <div class="project-thumbnail">
+                        <p class="project-number">08</p>
                         <img class="thumbnail-img" src="p/Blick innen 3.png" alt="Project Thumbnail">
                         <div class="project-info-container">
                             <p class="project-title">Project Title</p>
@@ -124,16 +136,21 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const thumbnails = document.querySelectorAll('.project-thumbnail');
-            thumbnails.forEach(thumbnail => {
-                const img = thumbnail.querySelector('.thumbnail-img');
-                const infoContainer = thumbnail.querySelector('.project-info-container');
-                img.onload = () => {
-                    infoContainer.style.height = `${img.offsetHeight}px`;
-                };
-                if (img.complete) {
-                    infoContainer.style.height = `${img.offsetHeight}px`;
-                }
-            });
+            const projectnumbers = document.querySelectorAll('.project-number');
+            const projectdescriptions = document.querySelectorAll('.project-description');
+            const projectinfocontainers = document.querySelectorAll('.project-info-container');
+            const projecttitles = document.querySelectorAll('.project-title');
+            const projectyears = document.querySelectorAll('.project-year');
+            // thumbnails.forEach(thumbnail => {
+            //     const img = thumbnail.querySelector('.thumbnail-img');
+            //     const infoContainer = thumbnail.querySelector('.project-info-container');
+            //     img.onload = () => {
+            //         infoContainer.style.height = `${img.offsetHeight}px`;
+            //     };
+            //     if (img.complete) {
+            //         infoContainer.style.height = `${img.offsetHeight}px`;
+            //     }
+            // });
 
             // Horizontal scrolling with mouse wheel
             const galleryContainer = document.getElementById('scroll-content');
@@ -151,7 +168,24 @@
 
             toggleButton.addEventListener('click', function () {
                 thumbnails.forEach(thumbnail => {
+                    
                     thumbnail.classList.toggle('no-shrink');
+                    console.log("teSt");
+                });
+                projectnumbers.forEach(projectnumber => {
+                    projectnumber.classList.toggle('project-number-shrink');
+                });
+                projectdescriptions.forEach(projectdescription => {
+                    projectdescription.classList.toggle('project-description-shrink');
+                });
+                projectinfocontainers.forEach(projectinfocontainer => {
+                    projectinfocontainer.classList.toggle('project-info-container-shrink');
+                });
+                projecttitles.forEach(projecttitle => {
+                    projecttitle.classList.toggle('project-title-shrink');
+                });
+                projectyears.forEach(projectyear => {
+                    projectyear.classList.toggle('project-year-shrink');
                 });
 
                 // Add a small delay for smooth animation when toggling flex shrink
