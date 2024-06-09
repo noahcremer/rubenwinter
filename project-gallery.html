@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruben Winter – Portfolio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="c/style.css">
+</head>
+
+<body>
+    <main>
+
+        
+
+        <section class="vertical-gallery">
+            <button class="close-btn">Close</button>
+            <div class="projekttexte-overlay">
+                <p class="projekt-titel">Project Title</p>
+                <p class="projekt-img-number">1/5</p>
+                <p class="projekt-jahr">2023</p>
+            </div>
+            
+            <img class="gallery-img-fullscreen" src="p/Blick innen 3.png">
+            <img class="gallery-img-fullscreen" src="p/Spiegelung.png">
+            <img class="gallery-img-fullscreen" src="p/InnenraumAchse.png">
+            <img class="gallery-img-fullscreen" src="p/dachstuhl.jpg">
+            
+            
+        </section>
+        
+
+
+
+        
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const thumbnails = document.querySelectorAll('.project-thumbnail');
+            const projectnumbers = document.querySelectorAll('.project-number');
+            const projectdescriptions = document.querySelectorAll('.project-description');
+            const projectinfocontainers = document.querySelectorAll('.project-info-container');
+            const projecttitles = document.querySelectorAll('.project-title');
+            const projectyears = document.querySelectorAll('.project-year');
+            // thumbnails.forEach(thumbnail => {
+            //     const img = thumbnail.querySelector('.thumbnail-img');
+            //     const infoContainer = thumbnail.querySelector('.project-info-container');
+            //     img.onload = () => {
+            //         infoContainer.style.height = `${img.offsetHeight}px`;
+            //     };
+            //     if (img.complete) {
+            //         infoContainer.style.height = `${img.offsetHeight}px`;
+            //     }
+            // });
+
+            // Horizontal scrolling with mouse wheel
+            const galleryContainer = document.getElementById('scroll-content');
+            galleryContainer.addEventListener('wheel', function(event) {
+                event.preventDefault();
+                galleryContainer.scrollLeft += event.deltaY;
+            });
+
+            const toggleButton = document.getElementById('toggleFlexShrink');
+
+            // Set flex-shrink to 0 by default
+            // thumbnails.forEach(thumbnail => {
+            //     thumbnail.classList.add('no-shrink');
+            // });
+
+            toggleButton.addEventListener('click', function () {
+                thumbnails.forEach(thumbnail => {
+                    
+                    thumbnail.classList.toggle('no-shrink');
+                    console.log("teSt");
+                });
+                projectnumbers.forEach(projectnumber => {
+                    projectnumber.classList.toggle('project-number-shrink');
+                });
+                projectdescriptions.forEach(projectdescription => {
+                    projectdescription.classList.toggle('project-description-shrink');
+                });
+                projectinfocontainers.forEach(projectinfocontainer => {
+                    projectinfocontainer.classList.toggle('project-info-container-shrink');
+                });
+                projecttitles.forEach(projecttitle => {
+                    projecttitle.classList.toggle('project-title-shrink');
+                });
+                projectyears.forEach(projectyear => {
+                    projectyear.classList.toggle('project-year-shrink');
+                });
+
+                // Add a small delay for smooth animation when toggling flex shrink
+                // setTimeout(() => {
+                //     thumbnails.forEach(thumbnail => {
+                //         thumbnail.style.transition = 'flex-shrink 2s ease';
+                //     });
+                // }, 100);
+            });
+
+            
+        });
+    </script>
+
+</body>
+
+</html>
