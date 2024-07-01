@@ -44,12 +44,19 @@ a:hover {
     position: fixed;
     bottom: 20px;
     left: 20px;
+    transition: 350ms ease-in-out;
+}
+.logo-on-top {
+    transform: translateY(calc(-100vh + 4.5rem));
+    transition: 350ms ease-in-out;
 }
 .right-logo {
     height: 25pt;
     position: fixed;
     bottom: 20px;
     right: 20px;
+
+    transition: 350ms ease-in-out;
 }
 .foldout-btn {
     height: 20pt;
@@ -79,7 +86,7 @@ a:hover {
 .navbar {
     opacity: 0;
     transition: 200ms ease-in-out;
-
+    padding-top: 5rem;
     width: 100vw;
     height: 30pt;
     text-align: center;
@@ -146,6 +153,7 @@ li:hover {
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    padding-top: 3.3rem;
 }
 .aboutgrid {
     height: 100%;
@@ -190,9 +198,6 @@ h1 {
     font-family: "Times";
     font-weight: normal;
     font-size: 10pt;
-}
-.about-h {
-
 }
 hr {
     width: 100%;
@@ -345,9 +350,6 @@ button:hover {
     transition: ease-in-out 200ms;
     transition-delay: 50ms;
     color: blue;
-}
-button:hover::before {
-
 }
 
 /*PROJECT GALLERY VIEW*/

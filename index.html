@@ -12,7 +12,7 @@
     <main>
         <section class="menu">
 
-            <div class="logo">
+            <div class="logo" id="#logo">
                 <img class="right-logo" src="p/W.svg">
                 <img class="left-logo" src="p/R.svg">
             </div>
@@ -365,6 +365,28 @@ Departement of Architecture
 
             
         });
+
+
+            var handlerFired;
+            window.addEventListener('scroll', function (e) {
+                const logoright = document.querySelector('.right-logo');
+                const logoleft = document.querySelector('.left-logo');
+                var containerTop = document.querySelector('.about-block').getBoundingClientRect().top;
+                if (containerTop <= 0) {
+                    if (!handlerFired) {
+                        handlerFired = 1;
+                        console.log('container at top of viewport or above');
+                        logoright.classList.add('logo-on-top');
+                        logoleft.classList.add('logo-on-top');
+                    }
+                }
+                if (containerTop > 0) {
+                    handlerFired = 0;
+                    logoright.classList.remove('logo-on-top');
+                    logoleft.classList.remove('logo-on-top');
+                }
+            });
+
     </script>
 
 </body>
