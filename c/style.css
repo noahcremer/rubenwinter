@@ -13,28 +13,32 @@
 * {
     margin: 0;
 }
+main {
+    scroll-behavior: smooth
+}
 html {
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth
 }
 p {
-    font-family: "Arial";
+    font-family: "Times";
+    font-size: 10pt;
 }
 a {
-    font-size: 12pt;
-    font-family: "Arial";
+    font-size: 10pt;
     text-decoration: none;
     color: black;
 }
 a:hover {
     
-    font-size: 13pt;
     font-family: "Times Italic";
     transition: ease-in-out 200ms;
     transition-delay: 50ms;
+    color: blue;
 }
-a:hover::before {
+/* a:hover::before {
     content: "🔗 ";
-}
+} */
 .left-logo {
     height: 25pt;
     position: fixed;
@@ -100,12 +104,11 @@ li {
     list-style-type: none;
     display: inline-block;
     vertical-align: middle;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 3rem;
+    margin-right: 3rem;
     transition: 200ms ease-in-out;
 }
 li:hover {
-    margin-bottom: 10px;
     transition: 200ms ease-in-out;
 }
 .gallery-container {
@@ -127,7 +130,78 @@ li:hover {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* For Firefox */
     width: 100vw; /* or the width of your container */
-    height: 90vh;
+    height: fit-content;
+    padding-bottom: 5rem;
+}
+.projektgallerie {
+    scroll-snap-align: start;
+    height: 100vh;
+    overflow: hidden;
+}
+#about {
+    scroll-behavior: smooth;
+}
+.about-block {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.aboutgrid {
+    height: 100%;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto 1fr;
+    gap: 1rem;
+}
+.general {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 0.5rem;
+}
+.education {
+    grid-column: 2;
+    grid-row: 3;
+    display: grid;
+    width: 100%;
+    gap: 0.5rem;
+}
+.profex {
+    grid-column: 3;
+    grid-row: 3;
+    display: grid;
+    width: 100%;
+    gap: 0.5rem;
+    grid-auto-rows: min-content;
+}
+.vol-ex {
+    grid-column: 4;
+    grid-row: 3;
+    display: grid;
+    width: 100%;
+    gap: 0.5rem;
+    grid-auto-rows: min-content;
+}
+h1 {
+    width: 100%;
+    text-transform: none;
+    font-size: unset;
+    font-family: "Times";
+    font-weight: normal;
+    font-size: 10pt;
+}
+.about-h {
+
+}
+hr {
+    width: 100%;
+    height: 1px;
+    border-width: 0;
+    color: black;
+    background-color: black;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 .scroll-content::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Opera */
@@ -262,18 +336,18 @@ button {
     background-color: rgba(255, 255, 255, 0);
     border: none;
     color: black;
-    font-family: "Arial";
-    font-size: 12pt;
+    font-family: "Times";
+    font-size: 10pt;
 }
 button:hover {
     font-family: "Times Italic";
-    font-size: 13pt;
     cursor: pointer;
     transition: ease-in-out 200ms;
     transition-delay: 50ms;
+    color: blue;
 }
 button:hover::before {
-    content: "🔎 ";
+
 }
 
 /*PROJECT GALLERY VIEW*/
@@ -330,7 +404,21 @@ iframe {
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    display: none;
 }
+.show-iframe {
+    display: block;
+}
+
+.open-project-btn {
+    font-family: "Times Italic";
+    margin: 0;
+    padding: 0;
+}
+.open-project-btn:hover::before {
+    content: unset;
+}
+
 .close-btn {
     font-family: "Times";
     position: fixed;
@@ -339,7 +427,4 @@ iframe {
 }
 .close-btn:hover::before {
     content: "⚒️ ";
-}
-main {
-
 }
