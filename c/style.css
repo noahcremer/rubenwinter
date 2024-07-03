@@ -13,6 +13,10 @@
 * {
     margin: 0;
 }
+::selection {
+    background: none;
+    color: blue;
+}
 main {
     scroll-behavior: smooth
 }
@@ -86,7 +90,7 @@ a:hover {
 .navbar {
     opacity: 0;
     transition: 200ms ease-in-out;
-    padding-top: 5rem;
+    padding-top: 4rem;
     width: 100vw;
     height: 30pt;
     text-align: center;
@@ -156,7 +160,7 @@ li:hover {
     padding-top: 3.3rem;
 }
 .aboutgrid {
-    height: 100%;
+    height: fit-content;
     margin: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -166,30 +170,41 @@ li:hover {
 .general {
     display: grid;
     grid-template-rows: auto auto 1fr;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 .education {
     grid-column: 2;
     grid-row: 3;
     display: grid;
     width: 100%;
-    gap: 0.5rem;
+    gap: 1rem;
+    grid-column-gap: 1rem;
+}
+.project-list {
+    grid-column: 1 / span 4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    gap: 1rem;
+    grid-column-gap: 1rem;
 }
 .profex {
     grid-column: 3;
     grid-row: 3;
     display: grid;
     width: 100%;
-    gap: 0.5rem;
+    gap: 1rem;
     grid-auto-rows: min-content;
+    grid-column-gap: 1rem;
 }
 .vol-ex {
     grid-column: 4;
     grid-row: 3;
     display: grid;
     width: 100%;
-    gap: 0.5rem;
+    gap: 1rem;
     grid-auto-rows: min-content;
+    grid-column-gap: 1.5rem;
 }
 h1 {
     width: 100%;
@@ -205,8 +220,7 @@ hr {
     border-width: 0;
     color: black;
     background-color: black;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+
 }
 .scroll-content::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Opera */
