@@ -247,7 +247,7 @@ Departement of Architecture
 
                 </div>
 
-                <h1 class="about-h" style="grid-column: 4; grid-row: 1;">Volunteer Work/Extracurricular Activities:</h1>
+                <h1 class="about-h" style="grid-column: 4; grid-row: 1;">Volunteer Work / Extracurricular Activities:</h1>
 
                 <div class="vol-ex">
                     <p class="about-text" style="grid-column: 1;">
@@ -405,20 +405,22 @@ Departement of Architecture
         });
 
 
-            var handlerFired;
+        var handlerFired;
             window.addEventListener('scroll', function (e) {
                 const logoright = document.querySelector('.right-logo');
                 const logoleft = document.querySelector('.left-logo');
-                var containerTop = document.querySelector('.about-block').getBoundingClientRect().top;
-                if (containerTop <= 0) {
+                const aboutBlock = document.querySelector('.about-block');
+                var containerTop = aboutBlock.getBoundingClientRect().top;
+                var offset = 500; // Offset Scroll Down
+
+                if (containerTop <= offset) {
                     if (!handlerFired) {
                         handlerFired = 1;
-                        console.log('container at top of viewport or above');
+                        console.log('container near top of viewport');
                         logoright.classList.add('logo-on-top');
                         logoleft.classList.add('logo-on-top');
                     }
-                }
-                if (containerTop > 0) {
+                } else {
                     handlerFired = 0;
                     logoright.classList.remove('logo-on-top');
                     logoleft.classList.remove('logo-on-top');
