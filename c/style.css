@@ -371,7 +371,7 @@ button:hover {
     height: fit-content;
     box-sizing: border-box;
     align-items: center;
-
+    background-color: white;
 }
 .gallery-img-fullscreen {
     scroll-snap-align: start;
@@ -381,18 +381,17 @@ button:hover {
     margin: 0 auto;
 }
 .projekttexte-overlay {
-    width: 35%;
+    width: 50%;
     position: fixed;
     left: 50%;
     top: 50%;
     translate: -50% 50%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    mix-blend-mode: difference;
 }
 .projekttexte-overlay p {
-    font-family: "Times Italic";
-    color: white;
+    font-family: "Times";
+    color: black;
     height: fit-content;
     
 }
@@ -437,9 +436,15 @@ iframe {
 .close-btn {
     font-family: "Times";
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 50%;
+    translate: 0 50%;
+    left: 20px;
 }
-.close-btn:hover::before {
-    content: "⚒️ ";
-}
+.next-btn {
+    font-family: "Times";
+    position: fixed;
+    top: 50%;
+    translate: 0 50%;
+    right: 20px;
+    text-align: right;
+} 
