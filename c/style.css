@@ -141,8 +141,7 @@ li:hover {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* For Firefox */
     width: 100vw; /* or the width of your container */
-    height: fit-content;
-    padding-bottom: 5rem;
+    height: 70vh;
 }
 .projektgallerie {
     scroll-snap-align: start;
